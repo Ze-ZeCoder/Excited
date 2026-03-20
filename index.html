@@ -443,18 +443,29 @@ function searchCars() {
 
 </script>
 
-    <script>
+   <script>
+
+function showPage(pageId) {
+
+    let pages = document.getElementsByClassName("page");
+
+    for (let i = 0; i < pages.length; i++) {
+        pages[i].classList.remove("active");
+    }
+
+    document.getElementById(pageId).classList.add("active");
+}
 
 function goHome() {
-    document.getElementById("home").scrollIntoView({
-        behavior: "smooth"
-    });
+    showPage("home");
 }
 
 function goContact() {
-    document.getElementById("contact").scrollIntoView({
-        behavior: "smooth"
-    });
+    showPage("contact");
+}
+
+function exploreCars() {
+    showPage("cars");
 }
 
 </script>
