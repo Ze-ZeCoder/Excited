@@ -25,15 +25,14 @@ header {
     text-align: center;
     padding: 10px;
 }
-
 .explore button {
     padding: 12px 20px;
     font-size: 16px;
     background: black;
     color: white;
     border: none;
+    border-radius: 10px;
 }
-
 /* NAVBAR */
 nav {
     background: black;
@@ -143,18 +142,19 @@ footer {
 
 <!-- EXPLORE BUTTON -->
 <div class="explore">
-    <button>🚀 Explore More Cars</button>
+   <button onclick="exploreCars()">🚀 Explore More Cars</button>
 </div>
 
 <nav>
     <a href="#">Home</a>
     <a href="#">Contact</a>
-    <a href="#">Cart 🛒</a>
-    <p>Location: India | Prayagraj | Kanpur | Lucknow | Ahmedabad | Hyderabad | Varanasi | Ghaziabad | Azamgarh</p>
+   <a href="#" onclick="viewCart()">Cart 🛒 (<span id="cart-count">0</span>)</a>
+<a href="#" onclick="checkout()">Pay 💳</a>
+    <p>Location: India - Prayagraj | Kanpur | Lucknow | Ahmedabad | Hyderabad | Varanasi | Ghaziabad | Azamgarh</p>
 </nav>
 
 <div class="search">
-    <input type="text" placeholder="Search your favorite Cars and another Toys...">
+   <input type="text" id="searchBox" onkeyup="searchCars()" placeholder="Search your favorite cars and toys...">
 </div>
 
 <!-- DELIVERY BOARD -->
@@ -166,14 +166,14 @@ footer {
     🔥 25% OFF on Top Toys & Cars 🔥
 </div>
 
-<section class="products">
+<section class="products" id="cars">
 
 <div class="card">
     <img src="https://cdn.bigboytoyz.com/new-version/products/product/bbtlexuslx570-01869.jpg">
     <h3>Lexus Super Sport</h3>
     <p>₹1200</p>
     <p>Fast luxury car model</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Lexus Super Sport', 1200)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -181,7 +181,7 @@ footer {
     <h3>Lamborghini</h3>
     <p>₹1500</p>
     <p>Super fast sports car</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Lamborghini', 1500)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -189,7 +189,7 @@ footer {
     <h3>Mercedes Benz</h3>
     <p>₹1300</p>
     <p>Premium luxury model</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Mercedes Benz', 1300)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -197,7 +197,7 @@ footer {
     <h3>Ferrari</h3>
     <p>₹1400</p>
     <p>Racing car model</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Ferrari', 1400)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -205,7 +205,7 @@ footer {
     <h3>Cyber Truck</h3>
     <p>₹1600</p>
     <p>Futuristic truck design</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Cyber Truck', 1600)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -213,7 +213,7 @@ footer {
     <h3>BMW</h3>
     <p>₹1250</p>
     <p>Stylish performance car</p>
-    <button>Add to Cart</button>
+  <button onclick="addToCart('BMW', 1250)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -221,7 +221,7 @@ footer {
     <h3>Nissan GTR</h3>
     <p>₹1550</p>
     <p>High speed sports car</p>
-    <button>Add to Cart</button>
+   <button onclick="addToCart('Nissan GTR', 1550)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -229,7 +229,7 @@ footer {
     <h3>Ford Mustang</h3>
     <p>₹1350</p>
     <p>Classic muscle car</p>
-    <button>Add to Cart</button>
+   <button onclick="addToCart('Ford Mustang', 1350)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -237,7 +237,7 @@ footer {
     <h3>Thar</h3>
     <p>₹1100</p>
     <p>Off-road SUV</p>
-    <button>Add to Cart</button>
+   <button onclick="addToCart('Thar', 1100)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -245,7 +245,7 @@ footer {
     <h3>Range Rover</h3>
     <p>₹1700</p>
     <p>Luxury SUV</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Range Rover', 1700)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -253,7 +253,7 @@ footer {
     <h3>Toyota Supra</h3>
     <p>₹1500</p>
     <p>Legendary sports car</p>
-    <button>Add to Cart</button>
+   <button onclick="addToCart('Toyota Supra',1500)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -261,7 +261,7 @@ footer {
     <h3>Porsche</h3>
     <p>₹1600</p>
     <p>High performance car</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Porsche', 1600)">Add to Cart</button>
 </div>
 
 <div class="card">
@@ -269,7 +269,7 @@ footer {
     <h3>Bugatti</h3>
     <p>₹2000</p>
     <p>Super luxury hypercar</p>
-    <button>Add to Cart</button>
+    <button onclick="addToCart('Bugatti', 2000)">Add to Cart</button>
 </div>
 
 </section>
@@ -315,6 +315,96 @@ footer {
     <p>Developed & Managed by Mohd. Arhaan</p>
     <p>Contact: ebrightaman@gmail.com</p>
 </footer>
+<script>
 
+let cart = [];
+let total = 0;
+
+function addToCart(name, price) {
+    cart.push({name: name, price: price});
+    total += price;
+
+    document.getElementById("cart-count").innerText = cart.length;
+
+    alert(name + " added!\nTotal: ₹" + total);
+}
+
+// VIEW CART WITH REMOVE OPTION
+function viewCart() {
+
+    if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+    }
+
+    let message = "🛒 Your Cart:\n\n";
+
+    for (let i = 0; i < cart.length; i++) {
+        message += (i + 1) + ". " + cart[i].name + " - ₹" + cart[i].price + "\n";
+    }
+
+    message += "\nTotal: ₹" + total;
+    message += "\n\nType item number to REMOVE or press Cancel";
+
+    let choice = prompt(message);
+
+    if (choice !== null) {
+        let index = parseInt(choice) - 1;
+
+        if (index >= 0 && index < cart.length) {
+            total -= cart[index].price;
+            cart.splice(index, 1);
+
+            document.getElementById("cart-count").innerText = cart.length;
+
+            alert("Item removed!");
+        }
+    }
+}
+
+// FAKE PAYMENT SYSTEM
+function checkout() {
+
+    if (cart.length === 0) {
+        alert("Cart is empty!");
+        return;
+    }
+
+    let confirmPay = confirm("Total Amount: ₹" + total + "\n\nDo you want to pay?");
+
+    if (confirmPay) {
+        alert("✅ Payment Successful!\n\n🚗 Your cars will be delivered in 10 minutes!");
+        
+        cart = [];
+        total = 0;
+
+        document.getElementById("cart-count").innerText = 0;
+    }
+}
+
+// EXPLORE
+function exploreCars() {
+    document.getElementById("cars").scrollIntoView({
+        behavior: "smooth"
+    });
+}
+
+// SEARCH
+function searchCars() {
+    let input = document.getElementById("searchBox").value.toLowerCase();
+    let cards = document.getElementsByClassName("card");
+
+    for (let i = 0; i < cards.length; i++) {
+        let text = cards[i].innerText.toLowerCase();
+
+        if (text.includes(input)) {
+            cards[i].style.display = "inline-block";
+        } else {
+            cards[i].style.display = "none";
+        }
+    }
+}
+
+</script>
 </body>
 </html>
