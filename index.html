@@ -143,23 +143,6 @@ footer {
     <h1>🚗 Excited</h1>
     <p>Best Die-Cast Cars & More Toys</p>
 </header>
-
-<section id="home" style="padding:20px; text-align:center;">
-
-<h2>Welcome to Excited 🚗</h2>
-
-<p>
-Excited is a fun website where you can explore amazing die-cast toy cars.
-We provide high-quality models like Lamborghini, Ferrari, BMW and more.
-</p>
-
-<p>
-⚡ Fast delivery in 10 minutes  
-💯 Best quality toys  
-🔥 Special offers on top cars  
-</p>
-
-</section>
     
 <!-- EXPLORE BUTTON -->
 <div class="explore">
@@ -167,8 +150,6 @@ We provide high-quality models like Lamborghini, Ferrari, BMW and more.
 </div>
 
 <nav>
-   <a href="javascript:void(0)" onclick="goHome()">Home</a>
-<a href="javascript:void(0)" onclick="goContact()">Contact</a>
 <a href="javascript:void(0)" onclick="viewCart()">Cart 🛒 (<span id="cart-count">0</span>)</a>
 <a href="javascript:void(0)" onclick="checkout()">Pay 💳</a>
     <p>Location: India - Prayagraj | Kanpur | Lucknow | Ahmedabad | Hyderabad | Varanasi | Ghaziabad | Azamgarh</p>
@@ -332,21 +313,6 @@ We provide high-quality models like Lamborghini, Ferrari, BMW and more.
 </div><div class="review">
     ⭐⭐⭐⭐ "Good quality toys!"
 </div>
-
-    <section id="contact" style="padding:20px; text-align:center; background:#eee;">
-
-<h2>Contact Us 📞</h2>
-
-<p>Email: ebrightaman@gmail.com</p>
-
-<p>
-Location: India  
-Cities: Prayagraj, Kanpur, Lucknow, Ahmedabad, Hyderabad, Varanasi, Ghaziabad, Azamgarh
-</p>
-
-<p>Developed, Directed & Managed by Mohd. Arhaan</p>
-
-</section>
 <footer>
     <p>Developed, Directed & Managed by Mohd. Arhaan</p>
     <p>Contact: ebrightaman@gmail.com</p>
@@ -454,14 +420,6 @@ function showPage(pageId) {
     }
 
     document.getElementById(pageId).classList.add("active");
-}
-
-function goHome() {
-    showPage("home");
-}
-
-function goContact() {
-    showPage("contact");
 }
 
 function exploreCars() {
