@@ -1,8 +1,9 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <link rel="icon" href="logo-small.png">
 <title>Excited - Die Cast Cars</title>
-
+  
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -12,7 +13,27 @@ body {
     font-family: Arial;
 }
 
-    
+  .brand h2 {
+  color: #ff3c3c;
+  font-weight: bold;
+  letter-spacing: 1px;
+}
+    .brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.brand img {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+
+.brand h2 {
+  color: white;
+  font-size: 20px;
+}
 
 /* HEADER */
 header {
@@ -35,6 +56,20 @@ header {
     border: none;
     border-radius: 10px;
 }
+
+.logo {
+  width: 120px;
+  height: auto;
+  display: block;
+  margin: auto;
+}
+    .logo {
+  width: 100px;
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+    
 /* NAVBAR */
 nav {
     background: black;
@@ -140,13 +175,15 @@ footer {
 
     
 <header>
-    <h1>🚗 Excited</h1>
-    <p>Best Die-Cast Cars & More Toys</p>
+     <div class="brand">
+    <img src="logo-small.png" alt="logo">
+    <h2>Excited Car</h2>
+</div>
 </header>
     
 <!-- EXPLORE BUTTON -->
 <div class="explore">
-   <button onclick="exploreCars()">🚀 Explore More Cars</button>
+    <button onclick="goToCars()">🚀 Explore More Cars and Toys</button>
 </div>
 
 <nav>
@@ -426,6 +463,11 @@ function exploreCars() {
     showPage("cars");
 }
 
+</script>
+    <script>
+function goToCars() {
+  document.getElementById("cars").scrollIntoView({ behavior: "smooth" });
+}
 </script>
 </body>
 </html>
